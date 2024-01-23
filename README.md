@@ -14,8 +14,8 @@ This Python program simulates dynamic memory allocation and deallocation in a sy
 ## Getting Started
 
 1. Clone this repository.
-2. Install required libraries (if any).
+2. Install required libraries. (Here None other than computer config)
 3. Run the program with an input file:
 
    ```bash
-   python memory_simulator.py
+   python memory_manager.py
