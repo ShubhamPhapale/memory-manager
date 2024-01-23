@@ -11,6 +11,10 @@ This Python program simulates dynamic memory allocation and deallocation in a sy
 - Performs memory compaction to reduce fragmentation.
 - Processes input files with allocation/deallocation transactions.
 
+## Documentation
+
+**Comprehensive Documentation (PDF):** [Memory_Manager_Documentation.pdf](Memory_Manager_Documentation.pdf)
+
 ## Getting Started
 
 1. Clone this repository.
