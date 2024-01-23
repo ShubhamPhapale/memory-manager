@@ -1,0 +1,42 @@
+# Allocate 100 bytes and store address in variable a
+allocate 100
+a = $
+
+# Allocate another 100 bytes and store address in variable b
+allocate 100
+b = $
+
+# Increase reference count of allocated block 100 (variable a)
+a = a
+
+# Allocate another 200 bytes and store address in variable c
+allocate 200
+c = $
+
+# Increase reference count of allocated block 100 (variable a) again
+a = a
+
+# Increase reference count of allocated block 200 (variable c)
+c = c
+
+# Deallocate memory from block b, reducing its reference count but not freeing it yet
+deallocate b
+
+# Allocate new block of 75 bytes, should use freed space from b
+allocate 75
+d = $
+
+# Deallocate remaining allocated blocks
+deallocate a
+deallocate c
+
+# Allocate large block, potentially requiring compaction
+allocate 500
+e = $
+
+# Print the current memory state
+print 1
+
+# Optionally, test a larger allocation after compaction
+allocate 1000
+print 1

@@ -1,0 +1,27 @@
+# Allocate 100 bytes
+allocate 100
+
+# Allocate another 200 bytes
+allocate 200
+
+# Deallocate memory from previously allocated block (reduces reference count)
+deallocate 0  
+# Assuming the starting address for the first block is 0
+
+# Allocate new block of 75 bytes, should use freed space
+allocate 75
+
+# Deallocate remaining allocated blocks
+deallocate 100
+deallocate 300
+
+# Allocate large block, potentially requiring compaction
+allocate 500
+
+# Print the current memory state
+# Extra functionality of calling print with default argument 1 in the input file itself
+print 1
+
+# Optionally, test a larger allocation after compaction
+allocate 1000
+print 1
